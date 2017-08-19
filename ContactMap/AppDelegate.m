@@ -18,9 +18,9 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[GMSServices provideAPIKey:@"######"];
-	[GMSPlacesClient provideAPIKey:@"#######"];
-	return YES;
+      [GMSServices provideAPIKey:@"AIzaSyBJEt_aRsWzOOJm7gbidB8_MgYPjVkyW2g"];
+      [GMSPlacesClient provideAPIKey:@"AIzaSyBIPcTQSlGLWeb2qfsG9MdpELS9hn4SDiY"];
+      return YES;
 }
 
 
