@@ -7,27 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42A5DF45CA9D465B9923E5E5 /* libPods-ContactMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F98E8506B9AA7929EDF569FE /* libPods-ContactMap.a */; };
+		98A1641D1F48113C005E85A1 /* ShowContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A1641C1F48113C005E85A1 /* ShowContactsViewController.m */; };
+		98A164231F484C9E005E85A1 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A164221F484C9E005E85A1 /* UIView+Toast.m */; };
 		98BE3BB31F47F4A4002EF3D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE3BB21F47F4A4002EF3D5 /* main.m */; };
 		98BE3BB61F47F4A4002EF3D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE3BB51F47F4A4002EF3D5 /* AppDelegate.m */; };
-		98BE3BB91F47F4A4002EF3D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE3BB81F47F4A4002EF3D5 /* ViewController.m */; };
 		98BE3BBC1F47F4A4002EF3D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98BE3BBA1F47F4A4002EF3D5 /* Main.storyboard */; };
 		98BE3BBF1F47F4A4002EF3D5 /* ContactMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98BE3BBD1F47F4A4002EF3D5 /* ContactMap.xcdatamodeld */; };
 		98BE3BC11F47F4A4002EF3D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98BE3BC01F47F4A4002EF3D5 /* Assets.xcassets */; };
 		98BE3BC41F47F4A4002EF3D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98BE3BC21F47F4A4002EF3D5 /* LaunchScreen.storyboard */; };
+		98BE3BCE1F47F65C002EF3D5 /* AddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BE3BCD1F47F65C002EF3D5 /* AddContactViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		696724F95F3C5A5AC7F75736 /* Pods-ContactMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactMap/Pods-ContactMap.debug.xcconfig"; sourceTree = "<group>"; };
+		98A1641B1F48113C005E85A1 /* ShowContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowContactsViewController.h; path = ShowContact/ShowContactsViewController.h; sourceTree = "<group>"; };
+		98A1641C1F48113C005E85A1 /* ShowContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowContactsViewController.m; path = ShowContact/ShowContactsViewController.m; sourceTree = "<group>"; };
+		98A164211F484C9E005E85A1 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Toast.h"; path = "Utility/UIView+Toast.h"; sourceTree = "<group>"; };
+		98A164221F484C9E005E85A1 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Toast.m"; path = "Utility/UIView+Toast.m"; sourceTree = "<group>"; };
 		98BE3BAE1F47F4A4002EF3D5 /* ContactMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98BE3BB21F47F4A4002EF3D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98BE3BB41F47F4A4002EF3D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		98BE3BB51F47F4A4002EF3D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		98BE3BB71F47F4A4002EF3D5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		98BE3BB81F47F4A4002EF3D5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98BE3BBB1F47F4A4002EF3D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98BE3BBE1F47F4A4002EF3D5 /* ContactMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactMap.xcdatamodel; sourceTree = "<group>"; };
 		98BE3BC01F47F4A4002EF3D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98BE3BC31F47F4A4002EF3D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98BE3BC51F47F4A4002EF3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98BE3BCC1F47F65C002EF3D5 /* AddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddContactViewController.h; path = AddContact/AddContactViewController.h; sourceTree = "<group>"; };
+		98BE3BCD1F47F65C002EF3D5 /* AddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddContactViewController.m; path = AddContact/AddContactViewController.m; sourceTree = "<group>"; };
+		9FE7E9FE2D8895F91C5BBA49 /* Pods-ContactMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactMap/Pods-ContactMap.release.xcconfig"; sourceTree = "<group>"; };
+		F98E8506B9AA7929EDF569FE /* libPods-ContactMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContactMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +45,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A5DF45CA9D465B9923E5E5 /* libPods-ContactMap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		447AE13F6D8AB7AE84A3F70E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F98E8506B9AA7929EDF569FE /* libPods-ContactMap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EB82A79F7175CBFDAB6FCCB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				696724F95F3C5A5AC7F75736 /* Pods-ContactMap.debug.xcconfig */,
+				9FE7E9FE2D8895F91C5BBA49 /* Pods-ContactMap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		98A1641A1F481106005E85A1 /* ShowContactOnMap */ = {
+			isa = PBXGroup;
+			children = (
+				98A1641B1F48113C005E85A1 /* ShowContactsViewController.h */,
+				98A1641C1F48113C005E85A1 /* ShowContactsViewController.m */,
+			);
+			name = ShowContactOnMap;
+			sourceTree = "<group>";
+		};
+		98A1641E1F484C40005E85A1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				98A164211F484C9E005E85A1 /* UIView+Toast.h */,
+				98A164221F484C9E005E85A1 /* UIView+Toast.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		98BE3BA51F47F4A4002EF3D5 = {
 			isa = PBXGroup;
 			children = (
 				98BE3BB01F47F4A4002EF3D5 /* ContactMap */,
 				98BE3BAF1F47F4A4002EF3D5 /* Products */,
+				4EB82A79F7175CBFDAB6FCCB /* Pods */,
+				447AE13F6D8AB7AE84A3F70E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,10 +108,11 @@
 		98BE3BB01F47F4A4002EF3D5 /* ContactMap */ = {
 			isa = PBXGroup;
 			children = (
+				98A1641E1F484C40005E85A1 /* Utility */,
+				98A1641A1F481106005E85A1 /* ShowContactOnMap */,
+				98BE3BCB1F47F5DE002EF3D5 /* Add-Contact */,
 				98BE3BB41F47F4A4002EF3D5 /* AppDelegate.h */,
 				98BE3BB51F47F4A4002EF3D5 /* AppDelegate.m */,
-				98BE3BB71F47F4A4002EF3D5 /* ViewController.h */,
-				98BE3BB81F47F4A4002EF3D5 /* ViewController.m */,
 				98BE3BBA1F47F4A4002EF3D5 /* Main.storyboard */,
 				98BE3BC01F47F4A4002EF3D5 /* Assets.xcassets */,
 				98BE3BC21F47F4A4002EF3D5 /* LaunchScreen.storyboard */,
@@ -82,6 +131,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		98BE3BCB1F47F5DE002EF3D5 /* Add-Contact */ = {
+			isa = PBXGroup;
+			children = (
+				98BE3BCC1F47F65C002EF3D5 /* AddContactViewController.h */,
+				98BE3BCD1F47F65C002EF3D5 /* AddContactViewController.m */,
+			);
+			name = "Add-Contact";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98BE3BC81F47F4A4002EF3D5 /* Build configuration list for PBXNativeTarget "ContactMap" */;
 			buildPhases = (
+				5B811C6F55C6A17247498857 /* [CP] Check Pods Manifest.lock */,
 				98BE3BAA1F47F4A4002EF3D5 /* Sources */,
 				98BE3BAB1F47F4A4002EF3D5 /* Frameworks */,
 				98BE3BAC1F47F4A4002EF3D5 /* Resources */,
+				92F3BEB798AB4668851E4F53 /* [CP] Embed Pods Frameworks */,
+				3A60F0811FE583032885A0AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,13 +210,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A60F0811FE583032885A0AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContactMap/Pods-ContactMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B811C6F55C6A17247498857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92F3BEB798AB4668851E4F53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContactMap/Pods-ContactMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		98BE3BAA1F47F4A4002EF3D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98BE3BB91F47F4A4002EF3D5 /* ViewController.m in Sources */,
+				98A164231F484C9E005E85A1 /* UIView+Toast.m in Sources */,
 				98BE3BBF1F47F4A4002EF3D5 /* ContactMap.xcdatamodeld in Sources */,
+				98A1641D1F48113C005E85A1 /* ShowContactsViewController.m in Sources */,
+				98BE3BCE1F47F65C002EF3D5 /* AddContactViewController.m in Sources */,
 				98BE3BB61F47F4A4002EF3D5 /* AppDelegate.m in Sources */,
 				98BE3BB31F47F4A4002EF3D5 /* main.m in Sources */,
 			);
@@ -273,24 +384,26 @@
 		};
 		98BE3BC91F47F4A4002EF3D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 696724F95F3C5A5AC7F75736 /* Pods-ContactMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4FT7PGP9C6;
 				INFOPLIST_FILE = ContactMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wydr.dev.ContactMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wydr.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		98BE3BCA1F47F4A4002EF3D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FE7E9FE2D8895F91C5BBA49 /* Pods-ContactMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4FT7PGP9C6;
 				INFOPLIST_FILE = ContactMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wydr.dev.ContactMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wydr.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -314,6 +427,7 @@
 				98BE3BCA1F47F4A4002EF3D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
