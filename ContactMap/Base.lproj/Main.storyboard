@@ -95,11 +95,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ig-PJ-Yai">
-                                        <rect key="frame" x="62" y="191" width="163" height="30"/>
+                                        <rect key="frame" x="62" y="212" width="163" height="30"/>
                                         <color key="backgroundColor" red="0.15686274510000001" green="0.62352941179999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="1Ve-Ra-fgt"/>
-                                            <constraint firstAttribute="width" constant="163" id="izi-ZX-WBG"/>
+                                            <constraint firstAttribute="height" constant="30" id="gEr-w2-yD4"/>
+                                            <constraint firstAttribute="width" constant="163" id="yL2-sF-1z0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
                                         <state key="normal" title="Show Contacts">
@@ -110,38 +110,39 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIc-hq-WeG">
-                                        <rect key="frame" x="32" y="231" width="224" height="55"/>
+                                        <rect key="frame" x="32" y="183" width="224" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="3dE-ht-ABM"/>
-                                            <constraint firstAttribute="width" constant="224" id="y8y-Te-UIW"/>
+                                            <constraint firstAttribute="width" constant="224" id="HhO-UM-ZNr"/>
+                                            <constraint firstAttribute="height" constant="25" id="a7a-Ab-Hyd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96027293889999998" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="0ig-PJ-Yai" secondAttribute="trailing" constant="63" id="2ko-Nd-JD5"/>
                                     <constraint firstAttribute="height" constant="294" id="3Gg-Sc-GDS"/>
                                     <constraint firstAttribute="trailing" secondItem="doU-iL-ywC" secondAttribute="trailing" constant="18" id="3fC-Sb-2PL"/>
                                     <constraint firstItem="koh-db-Owx" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="19" id="4Rb-Yq-Ilc"/>
+                                    <constraint firstAttribute="trailing" secondItem="NIc-hq-WeG" secondAttribute="trailing" constant="32" id="7wo-iT-Qdu"/>
                                     <constraint firstItem="EfI-NC-bGM" firstAttribute="top" secondItem="AEA-hN-KEx" secondAttribute="bottom" constant="15" id="EKx-QD-iUp"/>
                                     <constraint firstItem="AEA-hN-KEx" firstAttribute="top" secondItem="doU-iL-ywC" secondAttribute="bottom" constant="13" id="F4J-jW-CzW"/>
                                     <constraint firstItem="fjt-B7-DCr" firstAttribute="top" secondItem="AEA-hN-KEx" secondAttribute="bottom" constant="15" id="FZl-UG-2Yz"/>
+                                    <constraint firstAttribute="trailing" secondItem="0ig-PJ-Yai" secondAttribute="trailing" constant="63" id="JXK-wb-QGK"/>
+                                    <constraint firstItem="NIc-hq-WeG" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="32" id="Jln-jj-jak"/>
                                     <constraint firstItem="koh-db-Owx" firstAttribute="top" secondItem="jeY-WA-tTt" secondAttribute="top" constant="16" id="LHO-d2-oOj"/>
+                                    <constraint firstItem="0ig-PJ-Yai" firstAttribute="top" secondItem="NIc-hq-WeG" secondAttribute="bottom" constant="4" id="PSe-7g-Gok"/>
                                     <constraint firstItem="AEA-hN-KEx" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="19" id="SPg-BV-KZ6"/>
-                                    <constraint firstItem="NIc-hq-WeG" firstAttribute="top" secondItem="0ig-PJ-Yai" secondAttribute="bottom" constant="10" id="Vrv-pK-K8g"/>
                                     <constraint firstAttribute="trailing" secondItem="AEA-hN-KEx" secondAttribute="trailing" constant="18" id="XsQ-na-OUO"/>
                                     <constraint firstItem="EfI-NC-bGM" firstAttribute="top" secondItem="AEA-hN-KEx" secondAttribute="bottom" constant="15" id="bQa-Xf-dYL"/>
                                     <constraint firstAttribute="trailing" secondItem="EfI-NC-bGM" secondAttribute="trailing" constant="18" id="cVJ-zF-Gpa"/>
                                     <constraint firstItem="doU-iL-ywC" firstAttribute="top" secondItem="koh-db-Owx" secondAttribute="bottom" constant="13" id="d0E-qp-W8h"/>
                                     <constraint firstAttribute="width" constant="288" id="fFR-rg-mzU"/>
-                                    <constraint firstItem="0ig-PJ-Yai" firstAttribute="top" secondItem="EfI-NC-bGM" secondAttribute="bottom" constant="14" id="fzC-Dm-Mt5"/>
-                                    <constraint firstItem="0ig-PJ-Yai" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="62" id="kjE-Be-blf"/>
-                                    <constraint firstItem="NIc-hq-WeG" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="32" id="m6Z-AS-8pH"/>
-                                    <constraint firstAttribute="trailing" secondItem="NIc-hq-WeG" secondAttribute="trailing" constant="32" id="o4P-8z-zO0"/>
+                                    <constraint firstItem="NIc-hq-WeG" firstAttribute="top" secondItem="EfI-NC-bGM" secondAttribute="bottom" constant="6" id="fW6-M5-o78"/>
+                                    <constraint firstItem="0ig-PJ-Yai" firstAttribute="top" secondItem="NIc-hq-WeG" secondAttribute="bottom" constant="4" id="lkg-P2-OYN"/>
                                     <constraint firstAttribute="trailing" secondItem="koh-db-Owx" secondAttribute="trailing" constant="18" id="sG7-8e-9he"/>
+                                    <constraint firstItem="0ig-PJ-Yai" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="62" id="say-1Y-F2W"/>
                                     <constraint firstItem="fjt-B7-DCr" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="19" id="t1E-gF-82q"/>
                                     <constraint firstItem="doU-iL-ywC" firstAttribute="leading" secondItem="jeY-WA-tTt" secondAttribute="leading" constant="19" id="x2z-wa-6T9"/>
                                 </constraints>
@@ -169,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="2124.375" y="-540.84507042253517"/>
         </scene>
-        <!--Show Contacts View Controller-->
+        <!--All Contacts-->
         <scene sceneID="oOU-qY-fCV">
             <objects>
                 <viewController storyboardIdentifier="ShowContactsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J9f-KL-zJ3" customClass="ShowContactsViewController" sceneMemberID="viewController">
@@ -183,12 +184,15 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-FV-bvo">
                                 <rect key="frame" x="22" y="160" width="277" height="52"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.62352941179999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="O58-QQ-Pl9"/>
                                     <constraint firstAttribute="height" constant="52" id="jKn-fE-JnB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Add Contact"/>
+                                <state key="normal" title="Add Contact">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="addContacts:" destination="J9f-KL-zJ3" eventType="touchUpInside" id="Jsc-x0-ZjQ"/>
                                 </connections>
@@ -200,7 +204,7 @@
                             <constraint firstItem="8KZ-FV-bvo" firstAttribute="top" secondItem="DYI-wP-Qv1" secondAttribute="bottom" constant="96" id="DGv-Rr-l8g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6nc-as-VR4">
+                    <navigationItem key="navigationItem" title="All Contacts" id="6nc-as-VR4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3kq-eJ-Cf1">
                             <color key="tintColor" red="0.1019607843" green="0.44705882349999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -210,6 +214,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addContactShow" destination="8KZ-FV-bvo" id="EBE-d1-H1i"/>
+                        <outlet property="btnAddContact" destination="8KZ-FV-bvo" id="J3q-OJ-RFo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrj-au-Csi" userLabel="First Responder" sceneMemberID="firstResponder"/>

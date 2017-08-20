@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  ContactMap
 //
-//  Created by Wydr on 19/08/17.
+//  Created by Gopal on 19/08/17.
 //  Copyright © 2017 Sagoon. All rights reserved.
 //
 @import GoogleMaps;
@@ -12,15 +12,13 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,NSObject>
 
+@property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-- (NSURL *)applicationDocumentsDirectory;
-
-@property (strong, nonatomic) UIWindow *window;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+- (NSURL *)applicationDocumentsDirectory;
 - (void)saveContext;
 
 

@@ -2,14 +2,13 @@
 //  AppDelegate.m
 //  ContactMap
 //
-//  Created by Wydr on 19/08/17.
+//  Created by Gopal on 19/08/17.
 //  Copyright © 2017 Sagoon. All rights reserved.
 //
 
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -18,28 +17,22 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-      [GMSServices provideAPIKey:@"### ADD YOUR API KEYS ###"];
-      [GMSPlacesClient provideAPIKey:@"### ADD YOUR API KEYS ###"];
+      [GMSServices provideAPIKey:@"AIzaSyBJEt_aRsWzOOJm7gbidB8_MgYPjVkyW2g"];
+      [GMSPlacesClient provideAPIKey:@"AIzaSyBIPcTQSlGLWeb2qfsG9MdpELS9hn4SDiY"];
       return YES;
 }
 
-
 - (void)applicationWillResignActive:(UIApplication *)application {
-	
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
 }
 
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
 }
 
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
 	[self saveContext];
@@ -53,7 +46,6 @@
 	NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
 	if (managedObjectContext != nil) {
 		if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 			abort();
 		}
 	}
@@ -85,17 +77,12 @@
 	if (_persistentStoreCoordinator != nil) {
 		return _persistentStoreCoordinator;
 	}
-	
 	NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ContactMap.sqlite"];
-	
 	NSError *error = nil;
 	_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
 	if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-		
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
+            abort();
 	}
-	
 	return _persistentStoreCoordinator;
 }
 

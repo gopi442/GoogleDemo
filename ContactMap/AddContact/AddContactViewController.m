@@ -19,14 +19,12 @@
 	__weak IBOutlet UITextField *txtname;
 	__weak IBOutlet UITextField *txtphone_num;
 	__weak IBOutlet UITextField *txtemail;
-
-
-      IBOutlet UIButton *btnGetLocation;
-      IBOutlet UIButton *btnSaveContact;
-      IBOutlet UIButton *btnShowAllContact;
-	
-	__weak IBOutlet UILabel *lblYouLocation;
-	NSString *strLat,*strLong;
+      __weak IBOutlet UILabel     *lblYouLocation;
+             IBOutlet UIButton    *btnGetLocation;
+             IBOutlet UIButton    *btnSaveContact;
+             IBOutlet UIButton    *btnShowAllContact;
+                      NSString    *strLat;
+                      NSString    *strLong;
 
 }
 
@@ -57,28 +55,22 @@
 	if ([txtname.text isEqualToString:@""]) {
 		[self.view makeToast:@"name can not be blank" duration:1.0 position:CSToastPositionBottom];
 		return;
-	}
-	else if ([txtphone_num.text isEqualToString:@""]){
+	}else if ([txtphone_num.text isEqualToString:@""]){
 		[self.view makeToast:@"phone can not be blank" duration:1.0 position:CSToastPositionBottom];
 		return;
-	}
-	else if (txtphone_num.text.length !=10) {
+	}else if (txtphone_num.text.length !=10) {
 		[self.navigationController.view makeToast:@"Please enter 10 digit valid phone number" duration:1.0 position:CSToastPositionBottom];
 		return;
-	}
-	else if ([txtemail.text isEqualToString:@""]){
+	}else if ([txtemail.text isEqualToString:@""]){
 		[self.view makeToast:@"email can not be blank" duration:1.0 position:CSToastPositionBottom];
 		return;
-	}
-	else if (isOk==NO) {
+	}else if (isOk==NO) {
 		[self.navigationController.view makeToast:@"Please enter valid email" duration:1.0 position:CSToastPositionBottom];
 		return;
-	}
-	else if (strLat==nil || strLong==nil ){
+	}else if (strLat==nil || strLong==nil ){
 		[self.view makeToast:@"please set your location" duration:1.0 position:CSToastPositionBottom];
 		return;
-	}
-	else{
+	}else{
 		NSManagedObjectContext *context = [self managedObjectContext];
 		NSManagedObject *newDevice = [NSEntityDescription insertNewObjectForEntityForName:@"ContactInfo" inManagedObjectContext:context];
 		[newDevice setValue:txtname.text forKey:@"contact_name"];
@@ -86,30 +78,23 @@
 		[newDevice setValue:txtemail.text forKey:@"email"];
 		[newDevice setValue:strLat forKey:@"latitude"];
 		[newDevice setValue:strLong forKey:@"longitude"];
-		
 		NSError *error = nil;
 		if (![context save:&error]) {
 			NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
-		}
-		else{
-                  txtname.text=@"";
-                  txtphone_num.text=@"";
-                  txtemail.text=@"";
-                  strLat=nil;
-                  strLong=nil;
-                  lblYouLocation.text=@"";
-			[self.view makeToast:@"save successfully !" duration:1.0 position:CSToastPositionBottom];
+		}else{
+                  txtname.text=@"";txtphone_num.text=@"";txtemail.text=@"";strLat=nil;strLong=nil;lblYouLocation.text=@"";
+			[self.view makeToast:@"Contacts has been saved successfully !" duration:1.0 position:CSToastPositionBottom];
 		}
 	}
 	
 	
 }
 - (IBAction)showAllContacts:(id)sender {
-//	ShowContactsViewController *showContacts=[self.storyboard instantiateViewControllerWithIdentifier:@"ShowContactsViewController"];
-//	[self.navigationController pushViewController:showContacts animated:YES];
       [self.navigationController popViewControllerAnimated:YES];
+      
 }
 
+#pragma mark --ManagedObjectContext
 - (NSManagedObjectContext *)managedObjectContext {
 	NSManagedObjectContext *context = nil;
 	id delegate = [[UIApplication sharedApplication] delegate];
@@ -119,18 +104,17 @@
 	return context;
 }
 
-- (void)viewController:(GMSAutocompleteViewController *)viewController
-didAutocompleteWithPlace:(GMSPlace *)place {
+#pragma mark --Autocomplete address suggestion.
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController didAutocompleteWithPlace:(GMSPlace *)place {
 	[self dismissViewControllerAnimated:YES completion:nil];
   	strLat=[NSString stringWithFormat:@"%f",place.coordinate.latitude];
 	strLong=[NSString stringWithFormat:@"%f",place.coordinate.longitude];
 	lblYouLocation.text=[NSString stringWithFormat:@"%@",place.name];
 }
 
-- (void)viewController:(GMSAutocompleteViewController *)viewController
-didFailAutocompleteWithError:(NSError *)error {
+- (void)viewController:(GMSAutocompleteViewController *)viewController didFailAutocompleteWithError:(NSError *)error {
 	[self dismissViewControllerAnimated:YES completion:nil];
-	NSLog(@"Error: %@", [error description]);
 }
 
 - (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
@@ -145,31 +129,26 @@ didFailAutocompleteWithError:(NSError *)error {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
-
+#pragma mark-textfiled delegates
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-      if (textField.tag==1001) {
+      if (textField.tag==1001){
             NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:ACCEPTABLE_CHARACTERS] invertedSet];
             NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
             return [string isEqualToString:filtered];
-      }
-     else if (textField.tag==1002) {
+      }else if (textField.tag==1002) {
             NSUInteger newLength = textField.text.length + string.length - range.length;
-            if( newLength<11)
-              {
+            if( newLength<11){
                   NSCharacterSet *invalidCharSet = [[NSCharacterSet characterSetWithCharactersInString:ONLY_NUMBERS] invertedSet];
                   NSString *filtered = [[string componentsSeparatedByCharactersInSet:invalidCharSet] componentsJoinedByString:@""];
                   return [string isEqualToString:filtered];
-              }
-            else
+            }else
                   return NO;
-      }
-      else{
+      }else{
             return YES;
       }
 }
-
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField;
 {
@@ -177,7 +156,7 @@ didFailAutocompleteWithError:(NSError *)error {
 	return NO;
 }
 
-
+#pragma mark --email validation.
 -(BOOL) NSStringIsValidEmail:(NSString *)checkString
 {
 	NSString *emailRegex = @"[A-Z0-9a-z][A-Z0-9a-z._%+-]*@[A-Za-z0-9][A-Za-z0-9.-]*\\.[A-Za-z]{2,6}";

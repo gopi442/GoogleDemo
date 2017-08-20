@@ -15,19 +15,25 @@
 #import <CoreData/CoreData.h>
 @interface ShowContactsViewController ()
 {
-	GMSMapView *mapView_;
-	__weak IBOutlet UIButton *addContactShow;
-	NSMutableArray *contactsForMap;
+      __weak IBOutlet UIButton *addContactShow;
+             IBOutlet UIButton *btnAddContact;
+	          NSMutableArray *contactsForMap;
+                GMSMapView     *mapView_;
 }
 
 @end
-
 @implementation ShowContactsViewController
 @synthesize contactsForMap;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    btnAddContact.layer.cornerRadius=8;
 }
+
 -(void) viewDidAppear:(BOOL)animated{
+      addContactShow.hidden=YES;
+      [self fetchAllContacts];
+}
+-(void) fetchAllContacts{
       NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
       NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ContactInfo"];
       contactsForMap = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
@@ -36,37 +42,33 @@
             mapView_.hidden=NO;
             GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:28.664392
                                                                     longitude:77.446532
-                                                                         zoom:6];
+                                                                         zoom:5];
             mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT) camera:camera];
             mapView_.myLocationEnabled = YES;
             [self.view addSubview:mapView_];
             for(int i=0;i<[contactsForMap count];i++)
               {
                   NSManagedObject *contactInfo = [contactsForMap objectAtIndex:i];
-
                   NSString *name=[contactInfo valueForKey:@"contact_name"];
                   NSString *phone=[contactInfo valueForKey:@"phone_num"];
-                        //NSString *email=[contactInfo valueForKey:@"email"];
+                  NSString *email=[contactInfo valueForKey:@"email"];
                   NSString *lat = [contactInfo valueForKey:@"latitude"];
                   NSString *lon = [contactInfo valueForKey:@"longitude"];
                   double lt=[lat floatValue];
                   double ln=[lon floatValue];
-                  
-                  
                   GMSMarker *marker = [[GMSMarker alloc] init];
                   marker.position = CLLocationCoordinate2DMake(lt,ln );
                   marker.title = [NSString stringWithFormat:@"%@,%@",name,phone];
-                  marker.snippet =[NSString stringWithFormat:@"%@",name];
+                  marker.snippet =[NSString stringWithFormat:@"%@",email];
                   marker.map = mapView_;
               }
       }
       else{
             addContactShow.hidden=NO;
             mapView_.hidden=YES;
-            
+
       }
 }
-
 - (IBAction)addContacts:(id)sender {
 	AddContactViewController *addContact=[self.storyboard instantiateViewControllerWithIdentifier:@"AddContactViewController"];
 	[self.navigationController pushViewController:addContact animated:YES];
@@ -88,17 +90,8 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
