@@ -26,11 +26,12 @@
 @synthesize contactsForMap;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    btnAddContact.layer.cornerRadius=8;
+     addContactShow.hidden=YES;
+     btnAddContact.layer.cornerRadius=8;
 }
 
 -(void) viewDidAppear:(BOOL)animated{
-      addContactShow.hidden=YES;
+
       [self fetchAllContacts];
 }
 -(void) fetchAllContacts{
@@ -38,11 +39,13 @@
       NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"ContactInfo"];
       contactsForMap = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
       if ([contactsForMap count]>0 && contactsForMap!=nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
             addContactShow.hidden=YES;
             mapView_.hidden=NO;
+            });
             GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:28.664392
                                                                     longitude:77.446532
-                                                                         zoom:5];
+                                                                         zoom:7];
             mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT) camera:camera];
             mapView_.myLocationEnabled = YES;
             [self.view addSubview:mapView_];
@@ -64,8 +67,10 @@
               }
       }
       else{
+            dispatch_async(dispatch_get_main_queue(), ^{
             addContactShow.hidden=NO;
             mapView_.hidden=YES;
+             });
 
       }
 }

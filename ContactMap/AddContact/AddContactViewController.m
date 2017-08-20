@@ -5,7 +5,7 @@
 //  Created by Wydr on 19/08/17.
 //  Copyright © 2017 Sagoon. All rights reserved.
 //
-
+@import GoogleMaps;
 #define ACCEPTABLE_CHARACTERS @" ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 #define ONLY_NUMBERS @" +-0123456789"
 
@@ -14,7 +14,7 @@
 #import <CoreData/CoreData.h>
 #import <GooglePlaces/GooglePlaces.h>
 #import "UIView+Toast.h"
-@interface AddContactViewController ()<GMSAutocompleteViewControllerDelegate>{
+@interface AddContactViewController ()<GMSAutocompleteViewControllerDelegate,CLLocationManagerDelegate>{
 	
 	__weak IBOutlet UITextField *txtname;
 	__weak IBOutlet UITextField *txtphone_num;
@@ -23,9 +23,10 @@
              IBOutlet UIButton    *btnGetLocation;
              IBOutlet UIButton    *btnSaveContact;
              IBOutlet UIButton    *btnShowAllContact;
+             IBOutlet UIButton    *btnOtherLocation;
                       NSString    *strLat;
                       NSString    *strLong;
-
+             CLLocationManager    *locationManager;
 }
 
 @end
@@ -38,19 +39,31 @@
       txtphone_num.tag=1002;
       btnSaveContact.layer.cornerRadius=8;
       btnGetLocation.layer.cornerRadius=8;
+      btnOtherLocation.layer.cornerRadius=8;
       btnShowAllContact.layer.cornerRadius=8;
-	
+
+}
+
+- (IBAction)getOtherLocation:(id)sender {
+      if (locationManager) {
+            locationManager.delegate = nil;
+      }
+      GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
+      acController.delegate = self;
+      [self presentViewController:acController animated:YES completion:nil];
+
 }
 - (IBAction)getYourLocation:(id)sender {
-	GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
-	acController.delegate = self;
-	[self presentViewController:acController animated:YES completion:nil];
+      [self resignKeyboard];
+      locationManager=nil;
+      locationManager = [[CLLocationManager alloc] init];
+      locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+      [locationManager requestWhenInUseAuthorization];
+      locationManager.delegate = self;
+      [locationManager startUpdatingLocation];
 }
 - (IBAction)saveContact:(id)sender {
-	
-	[txtname resignFirstResponder];
-	[txtphone_num resignFirstResponder];
-	[txtemail resignFirstResponder];
+      [self resignKeyboard];
 	BOOL isOk=[self NSStringIsValidEmail:txtemail.text];
 	if ([txtname.text isEqualToString:@""]) {
 		[self.view makeToast:@"name can not be blank" duration:1.0 position:CSToastPositionBottom];
@@ -68,7 +81,7 @@
 		[self.navigationController.view makeToast:@"Please enter valid email" duration:1.0 position:CSToastPositionBottom];
 		return;
 	}else if (strLat==nil || strLong==nil ){
-		[self.view makeToast:@"please set your location" duration:1.0 position:CSToastPositionBottom];
+		[self.view makeToast:@"please enter location" duration:1.0 position:CSToastPositionBottom];
 		return;
 	}else{
 		NSManagedObjectContext *context = [self managedObjectContext];
@@ -82,8 +95,9 @@
 		if (![context save:&error]) {
 			NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
 		}else{
+                  locationManager.delegate=nil;
                   txtname.text=@"";txtphone_num.text=@"";txtemail.text=@"";strLat=nil;strLong=nil;lblYouLocation.text=@"";
-			[self.view makeToast:@"Contacts has been saved successfully !" duration:1.0 position:CSToastPositionBottom];
+			[self.view makeToast:@"Contacts has been saved successfully  !" duration:1.5 position:CSToastPositionBottom];
 		}
 	}
 	
@@ -91,7 +105,6 @@
 }
 - (IBAction)showAllContacts:(id)sender {
       [self.navigationController popViewControllerAnimated:YES];
-      
 }
 
 #pragma mark --ManagedObjectContext
@@ -156,6 +169,11 @@
 	return NO;
 }
 
+-(void) resignKeyboard{
+      [txtname resignFirstResponder];
+      [txtphone_num resignFirstResponder];
+      [txtemail resignFirstResponder];
+}
 #pragma mark --email validation.
 -(BOOL) NSStringIsValidEmail:(NSString *)checkString
 {
@@ -182,6 +200,15 @@
 	return FALSE;
 }
 
+#pragma mark --location manager delegates.
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+      CLLocation *currentLocation = [locations lastObject];
+      strLat  = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
+      strLong = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+      lblYouLocation.text=[NSString stringWithFormat:@"%@ , %@",strLat,strLong];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 	
